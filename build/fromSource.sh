@@ -1,10 +1,18 @@
-aseprite() {
-  # i have bough it just prefer building it from source
-  git clone --depth=1 --recursive --shallow-submodules https://github.com/aseprite/aseprite.git
-  sudo pacman -S --needed gcc clang libc++ cmake ninja libx11 libxcursor mesa-libgl fontconfig
+buildNvim() {
+  cd ~/Software
+  git clone https://github.com/neovim/neovim
+  cd neovim
+  make CMAKE_BUILD_TYPE=Release
+  sudo make install
+  cd ~/
+}
+
+buildAseprite() {
+  cd ~/Apps
+  git clone --depth=1 --recursive --shallow-submodules  https://github.com/aseprite/aseprite
   cd aseprite
-  mkdir -p build
-  mkdir -p deps
+  mkdir build
+  mkdir deps
   cd deps
   mkdir skia
   cd skia
@@ -26,28 +34,5 @@ aseprite() {
     -DSKIA_LIBRARY=$HOME/Apps/aseprite/deps/skia/out/Release-x64/libskia.a \
     -G Ninja \
     ..
-ninja aseprite
-
-}
-
-vlang() {
-  cd ~/Software
-  git clone --depth=1 https://github.com/vlang/v
-  cd v
-  make
-  sudo ./v symlink
-  cd ..
-
-  git clone --depth=1 https://github.com/Shoshta73/v-analyzer.git
-  cd v-analyzer
-  v install
-  v build.vsh release
-  cd
-}
-
-sourceArch() {
-  mkdir -p ~/Apps
-  cd ~/Apps
-  aseprite
-  vlang
+  ninja aseprite
 }
