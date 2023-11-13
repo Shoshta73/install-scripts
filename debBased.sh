@@ -14,14 +14,14 @@ installDebNeeded() {
 installEditors() {
   echo "installing editors"
   read -p "Do you want to install nvim from source (y/n) " answear
-  if [ "$answear" == "y" || "$answear" == "Y" || "$answear" == "yes" || "$answear" == "YES" ]; then
+  if [ "$answear" == "y" ] || [ "$answear" == "Y" ] || [ "$answear" == "yes" ] || [ "$answear" == "YES" ]; then
     source ~/dotfiles/install-scripts/build/fromSource.sh
     source ~/dotfiles/install-scripts/build/deps.sh
     UbunutDebianNvimDeps
     buildNvim
   else
     read -p "Use appimmage (y/n) " answear
-    if [ "$answear" == "y" || "$answear" == "Y" || "$answear" == "yes" || "$answear" == "YES" ]; then
+    if [ "$answear" == "y" ] || [ "$answear" == "Y" ] || [ "$answear" == "yes" ] || [ "$answear" == "YES" ]; then
       wget -p ~/bin https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
       chmod u+x ~/bin/nvim.appimage
       mv ~/bin/nvim.appimage ~/bin/nvim
