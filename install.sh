@@ -48,37 +48,96 @@ case $distro_number in
   3)
     echo "You are using Arco Linux."
     export DISTRO=arco
-    echo "not implemented yet"
+    source ~/dotfiles/install-scripts/arch.sh
+
+    installArchNeeded
+    installyay
+    setupConfigs
+    scriptedInstalls
+    installNPMpackages
+    archInstall
+    wgetInstalls
+    installFonts
     ;;
   4)
     echo "You are using Manjaro Linux."
     export DISTRO=manjaro
-    echo "not implemented yet"
+    source ~/dotfiles/install-scripts/arch.sh
+
+    installArchNeeded
+    installyay
+    setupConfigs
+    scriptedInstalls
+    installNPMpackages
+    archInstall
+    wgetInstalls
+    installFonts
     ;;
   5)
     echo "You are using Garuda Linux."
     export DISTRO=garuda
-    echo "not implemented yet"
+    source ~/dotfiles/install-scripts/arch.sh
+
+    installArchNeeded
+    installyay
+    setupConfigs
+    scriptedInstalls
+    installNPMpackages
+    archInstall
+    wgetInstalls
+    installFonts
     ;;
   6)
     echo "You are using Debian."
     export DISTRO=debian
-    echo "not implemented yet"
+    source ~/dotfiles/install-scripts/debBased.sh
+
+    installDebNeeded
+    setupConfigs
+    scriptedInstalls
+    installNPMpackages
+    debInstall
+    wgetInstalls
+    installFonts
     ;;
   7)
     echo "You are using Ubuntu."
     export DISTRO=ubuntu
-    echo "not implemented yet"
+    source ~/dotfiles/install-scripts/debBased.sh
+
+    installDebNeeded
+    setupConfigs
+    scriptedInstalls
+    installNPMpackages
+    debInstall
+    wgetInstalls
+    installFonts
     ;;
   8)
     echo "You are using Pop!_OS."
     export DISTRO=pop
-    echo "not implemented yet"
+    source ~/dotfiles/install-scripts/debBased.sh
+
+    installDebNeeded
+    setupConfigs
+    scriptedInstalls
+    installNPMpackages
+    debInstall
+    wgetInstalls
+    installFonts
     ;;
   9)
     echo "You are using Linux Mint."
     export DISTRO=mint
-    echo "not implemented yet"
+    source ~/dotfiles/install-scripts/debBased.sh
+
+    installDebNeeded
+    setupConfigs
+    scriptedInstalls
+    installNPMpackages
+    debInstall
+    wgetInstalls
+    installFonts
     ;;
   10)
     echo "You are using Slackware Linux."
@@ -115,7 +174,7 @@ if [ ! -d "$HOME/dotfiles/private" ]; then
   echo "bye have a gret time"
 else
   source ~/dotfiles/private/private.sh
-  privatae
+  private
 fi
 
 source ~/.bashrc

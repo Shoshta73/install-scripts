@@ -1,3 +1,5 @@
+set -x
+
 archNvimDeps() {
   yay -S --needed base-devel
   yay -S --needed cmake

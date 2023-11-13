@@ -74,6 +74,7 @@ installTerminalTools(){
   yay -S --needed bat
   yay -S --needed eza
   yay -S --needed btop
+  yay -S --needed fastfetch
   echo "done installing terminal tools"
 }
 

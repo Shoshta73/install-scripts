@@ -1,3 +1,5 @@
+set -x
+
 buildNvim() {
   cd ~/Software
   git clone https://github.com/neovim/neovim
