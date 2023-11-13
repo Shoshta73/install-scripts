@@ -4,8 +4,9 @@ buildNvim() {
   cd ~/Software
   git clone https://github.com/neovim/neovim
   cd neovim
+  git checkout stable
   make CMAKE_BUILD_TYPE=Release
-  sudo make install
+  sudo make clean install
   cd ~/
 }
 
@@ -37,4 +38,5 @@ buildAseprite() {
     -G Ninja \
     ..
   ninja aseprite
+  ln -s ~/Apps/aseprite/build/bin/aseprite ~/bin/
 }
