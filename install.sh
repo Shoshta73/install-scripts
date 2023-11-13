@@ -179,3 +179,15 @@ fi
 
 source ~/.bashrc
 bahs-it profile load arch
+
+case "$DISTRO" in
+  "arch"|"arco"|"garuda"|"manjaro")
+    yay -Syu
+    ;;
+  "debian"|"ubuntu"|"mint"|"pop")
+    sudo apt update
+    sudo apt upgrade
+    sudo apt autoremove
+    sudo apt install -f
+    ;;
+esac
