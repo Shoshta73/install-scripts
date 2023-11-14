@@ -80,7 +80,7 @@ installTerminalTools(){
 
 installGitTools(){
   echo "installing git tools"
-  yay -S --needed github-dekstop-bin
+  yay -S --needed github-desktop-bin
   yay -S --needed meld
   yay -S --needed gitg
   yay -S --needed github-cli
