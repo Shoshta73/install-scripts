@@ -26,11 +26,6 @@ echo "13. Fedora"
 read -p "Enter the number corresponding to your distribution: " distro_number
 
 case $distro_number in
-  1)
-    echo "You are using Alpine Linux."
-    export DISTRO=alpine
-    echo "not implemented yet"
-    ;;
   2)
     echo "You are using Arch Linux."
     export DISTRO=arch
@@ -87,80 +82,8 @@ case $distro_number in
     wgetInstalls
     installFonts
     ;;
-  6)
-    echo "You are using Debian."
-    export DISTRO=debian
-    source ~/dotfiles/install-scripts/debBased.sh
-
-    installDebNeeded
-    setupConfigs
-    scriptedInstalls
-    installNPMpackages
-    debInstall
-    wgetInstalls
-    installFonts
-    ;;
-  7)
-    echo "You are using Ubuntu."
-    export DISTRO=ubuntu
-    source ~/dotfiles/install-scripts/debBased.sh
-
-    installDebNeeded
-    setupConfigs
-    scriptedInstalls
-    installNPMpackages
-    debInstall
-    wgetInstalls
-    installFonts
-    ;;
-  8)
-    echo "You are using Pop!_OS."
-    export DISTRO=pop
-    source ~/dotfiles/install-scripts/debBased.sh
-
-    installDebNeeded
-    setupConfigs
-    scriptedInstalls
-    installNPMpackages
-    debInstall
-    wgetInstalls
-    installFonts
-    ;;
-  9)
-    echo "You are using Linux Mint."
-    export DISTRO=mint
-    source ~/dotfiles/install-scripts/debBased.sh
-
-    installDebNeeded
-    setupConfigs
-    scriptedInstalls
-    installNPMpackages
-    debInstall
-    wgetInstalls
-    installFonts
-    ;;
-  10)
-    echo "You are using Slackware Linux."
-    export DISTRO=slackware
-    echo "not implemented yet"
-    ;;
-  11)
-    echo "You are using Void Linux."
-    export DISTRO=void
-    echo "not implemented yet"
-    ;;
-  12)
-    echo "You are using openSUSE."
-    export DISTRO=opensuse
-    echo "not implemented yet"
-    ;;
-  13)
-    echo "You are using Fedora."
-    export DISTRO=fedora
-    echo "not implemented yet"
-    ;;
   *)
-    echo "Invalid selection."
+    echo "Arch is HOME."
     ;;
 esac
 
@@ -184,10 +107,7 @@ case "$DISTRO" in
   "arch"|"arco"|"garuda"|"manjaro")
     yay -Syu
     ;;
-  "debian"|"ubuntu"|"mint"|"pop")
-    sudo apt update
-    sudo apt upgrade
-    sudo apt autoremove
-    sudo apt install -f
+  *)
+    echo "ARCH IS HOME"
     ;;
 esac

@@ -39,4 +39,5 @@ buildAseprite() {
     ..
   ninja aseprite
   ln -s ~/Apps/aseprite/build/bin/aseprite ~/bin/
+  cd
 }
