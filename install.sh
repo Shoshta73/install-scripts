@@ -103,6 +103,12 @@ fi
 source ~/.bashrc
 bahs-it profile load arch
 
+read -p "Are you using kde desktop environment? (y/n) " answear
+if [ "$answear" == "y" ] || [ "$answear" == "Y" ] || [ "$answear" == "yes" ] || [ "$answear" == "YES" ]; then
+  source ~/dotfiles/KDE/KDE.sh
+  KDE
+fi
+
 case "$DISTRO" in
   "arch"|"arco"|"garuda"|"manjaro")
     yay -Syu

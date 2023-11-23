@@ -26,11 +26,12 @@ symlinkConfigFiles() {
   ln -sf ~/dotfiles/terminal/alacritty/ ~/.config/alacritty
   ln -sf ~/dotfiles/terminal/tmux/tmux.conf ~/.tmux.conf
 
-  ln -sf ~/dotfiles/terminal/konsole/konsole.motifyrc ~/.config/
+  ln -sf ~/dotfiles/terminal/konsole/konsole.notifyrc ~/.config/
   ln -sf ~/dotfiles/terminal/konsole/term.profile ~/.local/share/konsole/
   ln -sf ~/dotfiles/terminal/konsole/konsolerc ~/.config/
+  ln -sf ~/dotfiles/terminal/konsole/konsolesshconfig ~/.config/
 
-  ln -sf ~/dotfiles/terminal/yakuake/yakuake.motifyrc ~/.config/
+  ln -sf ~/dotfiles/terminal/yakuake/yakuake.notifyrc ~/.config/
   ln -sf ~/dotfiles/terminal/yakuake/yakuakerc ~/.config/
 
   ln -sf ~/dotfiles/bash/.bashrc ~/
@@ -45,6 +46,7 @@ symlinkConfigFiles() {
   # git submodule update --init editors/lite-xl/plugins/lintplus
   # git submodule update --init editors/lite-xl/plugins/lsp
 
+  ln -sf ~/dotfiles/user-dirs/* ~/.config/
   echo "done symlinking config files"
 }
 
